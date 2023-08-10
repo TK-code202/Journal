@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal</title>
+</head>
+<body>
+    <div class="container">
+        <div class="journal  mt-3 w-75 p-4">
+            <h2 class="text-center">📓My Journal</h2>
+            <hr>
+            <form id="formOne" class="bg-light p-4">
+                <h3 class="my-3">Create An Entry</h3>
+                <div class="form-group mb-3">
+                    <label for="name-of-task">Title:</label>
+                    <input type="text" id="title" class="form-control" placeholder="Entry Title">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="name-of-task">Entry:</label>
+                    <textarea name="" id="entry-body" class="form-control" placeholder="Enter your thoughts here"></textarea>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="name-of-task">Date and Time</label>
+                    <input type="datetime-local" id="dateTime" class="form-control" placeholder="Date and Time of Entry">
+                </div>
+
+                <div class="mb-2">
+                    <button class="btn btn-info" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="row my-5">
+            <div class="col-md-6">
+                <h3>Entries</h3>
+                <ul id="entry-list">
+                
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <div id="list-details" class="bg-info p-4">
+                    <h3 class="text-secondary">Entry Details</h3>
+                    <p>Entry Title: <span class="entry-title"></span></p>
+                    <p>Date & Time Of Entry: <span class="entry-date"></span></p>
+                    <p>Number Of Words:<span class="number-of-words"></span></p>
+                    <p>Number Of Vowels: <span class="number-of-vowels"></span></p>
+                    <p>Number Of Consonants: <span class="number-of-consonants"></span></p>
+
+                    <div id="buttons">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
