@@ -51,16 +51,16 @@ function noInputtedWord(word) {
 }
 
 
-function spaceRemover (text) {
-    const wordArray = text;
-    const words = [];
-    wordArray.forEach(function(element) {
-        if (element.length >= 1 ) {
-            words.push(element);
+function textCleaner(text) {
+    const wordArray = text.trim().split(" ");
+    const characters = [];
+    wordArray.forEach(function (element) {
+        if (element.length >= 1 && ![",", ".", "?", "!", "-", "'", ";", ":"].includes(element)) {
+            characters.push(element);
         }
     })
-    return words;
-  }
+    return characters.join(" ");
+}
 
 Entry.prototype.getTeaser = function () {
     if (noInputtedWord(this.body)) {
@@ -69,7 +69,7 @@ Entry.prototype.getTeaser = function () {
     let firstSentence = this.body.split(".", 1)[0].concat(".");
     let sentence = firstSentence.trim().split(" ");
     let teaserWords = "";
-    for (let j = 0; (j <= 7 && j <= sentence.length - 1);j++) {
+    for (let j = 0; (j <= 7 && j <= sentence.length - 1); j++) {
         teaserWords += sentence[j];
         if (j !== (sentence.length - 1)) {
             teaserWords = teaserWords.concat(" ");
@@ -83,7 +83,8 @@ Entry.prototype.numberOfWords = function () {
         return 0;
     }
     let wordCount = 0;
-    const wordArray = spaceRemover(this.body.split(" "));
+    const cleanedWords = textCleaner(this.body);
+    const wordArray = cleanedWords.split(" ");
     wordArray.forEach(function (element) {
         if (!Number(element)) {
             wordCount++;
