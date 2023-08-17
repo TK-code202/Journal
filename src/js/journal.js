@@ -42,7 +42,9 @@ export function Entry(title, body, date) {
     this.consonants = 0;
 }
 
+//----------------------
 
+// Words Utility Functions
 function noInputtedWord(word) {
     if (word.trim().length === 0) {
         return true;
@@ -58,9 +60,11 @@ function textCleaner(text) {
         if (element.length >= 1 && ![",", ".", "?", "!", "-", "'", ";", ":"].includes(element)) {
             characters.push(element);
         }
-    })
+    });
     return characters.join(" ");
 }
+
+// -------------------------
 
 Entry.prototype.getTeaser = function () {
     if (noInputtedWord(this.body)) {
