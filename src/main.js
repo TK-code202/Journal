@@ -4,9 +4,15 @@ import {Entry} from './js/journal.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/style.css';
+import Logo from './assets/img/download.png';
 
 
 // User Interface Logic ---------
+
+//------- Logo -----
+$("link").attr("href", Logo);
+//--------------------
+
 let journal = new Journal();
 
 function displayEntryDetails(journalToDisplay) {
@@ -36,6 +42,7 @@ function showEntry(entryId) {
     buttons.append("<button class='deleteButton' id=" + entry.id + ">Delete</button>");
 }
 
+//Event Listener
 function attachEntryListeners() {
     $("ul#entry-list").on("click", "li", function () {
         showEntry(this.id);
