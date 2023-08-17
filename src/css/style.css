@@ -25,6 +25,7 @@ body {
 
 #list-details {
     box-shadow: rgba(255, 255, 255, 0.918) 0px 0px 0px 3px;
+    display: none;
 }
 
 .deleteButton {
